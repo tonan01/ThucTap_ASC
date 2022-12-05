@@ -1,0 +1,26 @@
+﻿@using Kendo.Mvc.UI
+@{
+    ViewBag.Title = "Basic_Usage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<div style="height: 100vh; margin: 8% 22%; ">*@
+<div class="demo-section wide" style="min-width: 644px;">
+    @(
+            Html.Kendo().MediaPlayer()
+                .AutoPlay(true)
+                .Navigatable(true)
+                .Mute(false)
+                .FullScreen(false)
+                .AutoRepeat(true)
+                .ForwardSeek(true)
+                .Volume(50)
+            .Media(m=>m
+                .Title("Thực tập MediaPlayer căn bản")
+                .Source("https://www.youtube.com/watch?v=P8lbUgeH2q0")
+            )
+            .Name("mediaPlayer1")
+            .HtmlAttributes(new { style = "height:360px" })
+    )
+</div>
+@*</div>*@
+

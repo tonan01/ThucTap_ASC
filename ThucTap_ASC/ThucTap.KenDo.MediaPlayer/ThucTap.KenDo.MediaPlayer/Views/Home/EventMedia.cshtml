@@ -1,0 +1,48 @@
+﻿@using Kendo.Mvc.UI
+
+@{
+    ViewBag.Title = "EventMedia";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<div style="height: 100vh; margin: 8% 22%; ">*@
+    <div class="demo-section wide" style="min-width: 644px; ">
+        @(Html.Kendo().MediaPlayer()
+        .Name("MediaPlayer")
+        .AutoPlay(true)
+        .Events(e => e.Play("onPlay").Pause("onPause").End("onEnd").Ready("onReady")
+            .TimeChange("onTimeChange").VolumeChange("onVolumeChange"))
+        .Media(m => m
+            .Title("Thực tập media Event")
+            .Source("https://www.youtube.com/watch?v=6yBDTBXkTY0")
+        )
+        .HtmlAttributes(new { style = "height:360px" })
+    )
+    </div>
+@*</div>*@
+<script>
+    function onPlay() {
+        console.log("event :: play");
+    }
+
+    function onPause() {
+        console.log("event :: pause");
+    }
+
+    function onEnd() {
+        console.log("event :: end");
+    }
+
+    function onReady() {
+        console.log("event :: ready");
+    }
+
+    function onTimeChange() {
+        console.log("event :: timeChange");
+    }
+
+    function onVolumeChange() {
+        console.log("event :: volumeChange");
+    }
+</script>
+
+

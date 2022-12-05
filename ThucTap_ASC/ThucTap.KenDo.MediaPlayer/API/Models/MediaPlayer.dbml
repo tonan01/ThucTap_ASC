@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ThucTapMedia" Class="MediaPlayerDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-QGV07E1;Initial Catalog=ThucTapMedia;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ThucTapMediaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TBL_Video" Member="TBL_Videos">
+    <Type Name="TBL_Video">
+      <Column Name="ID_ViDeo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Title" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Poster" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Source" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

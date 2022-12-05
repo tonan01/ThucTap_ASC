@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ThucTap">
+  <DataContextMoniker Name="/ThucTapDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e9c68e52-25b4-4ea7-9a4c-833ff51cf068" absoluteBounds="3.5, 6, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ThucTapDataContext/TBLDeTai" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2cff7332-3439-45ec-bbc9-94eb14c287c1" absoluteBounds="3.515, 6.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5d72fff2-b697-44d1-b15e-7bbf83453d58" absoluteBounds="3.5, 3.375, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/ThucTapDataContext/TBLSinhVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d463d56b-aa9b-4635-8e8c-8d6d1c806f8d" absoluteBounds="3.515, 3.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a465b577-cd64-4938-bb47-c2c1e3575dfe" absoluteBounds="3.5, 1, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ThucTapDataContext/TBLGiangVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4e05ce1c-ad0e-434d-82b6-25f59ce51173" absoluteBounds="3.515, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b3302b17-4992-4e90-ae60-c512334cd99c" absoluteBounds="6.25, 1, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/ThucTapDataContext/TBLHuongDan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="de8ae002-82e8-4067-b9bd-90cc5de322ac" absoluteBounds="6.265, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="35692896-3f6b-4325-8cf7-29544cb532af" absoluteBounds="0.75, 2.375, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/ThucTapDataContext/TBLKhoa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="121d6902-ba60-4317-ba50-e937e6a63477" absoluteBounds="0.765, 2.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 6.78929768880208); (7.25 : 6.78929768880208); (7.25 : 2.57859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ThucTapDataContext/TBLDeTai/TBLDeTai_TBLHuongDan" />
+      <nodes>
+        <classShapeMoniker Id="e9c68e52-25b4-4ea7-9a4c-833ff51cf068" />
+        <classShapeMoniker Id="b3302b17-4992-4e90-ae60-c512334cd99c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 1.78929768880208); (6.25 : 1.78929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ThucTapDataContext/TBLGiangVien/TBLGiangVien_TBLHuongDan" />
+      <nodes>
+        <classShapeMoniker Id="a465b577-cd64-4938-bb47-c2c1e3575dfe" />
+        <classShapeMoniker Id="b3302b17-4992-4e90-ae60-c512334cd99c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.56814697265625); (3.5 : 3.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ThucTapDataContext/TBLKhoa/TBLKhoa_TBLSinhVien" />
+      <nodes>
+        <classShapeMoniker Id="35692896-3f6b-4325-8cf7-29544cb532af" />
+        <classShapeMoniker Id="5d72fff2-b697-44d1-b15e-7bbf83453d58" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 2.375); (1.75 : 1.6874995); (3.5 : 1.6874995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ThucTapDataContext/TBLKhoa/TBLKhoa_TBLGiangVien" />
+      <nodes>
+        <classShapeMoniker Id="35692896-3f6b-4325-8cf7-29544cb532af" />
+        <classShapeMoniker Id="a465b577-cd64-4938-bb47-c2c1e3575dfe" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

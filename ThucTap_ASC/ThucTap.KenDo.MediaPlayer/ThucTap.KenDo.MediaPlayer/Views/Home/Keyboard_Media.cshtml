@@ -1,0 +1,35 @@
+﻿@using Kendo.Mvc.UI
+@{
+    ViewBag.Title = "Keyboard_Media";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<div style="height: 100vh; margin: 8% 22%; ">*@
+    <div class="demo-section wide" style="min-width: 644px; ">
+        @(Html.Kendo().MediaPlayer()
+            .AutoPlay(false)
+            .Mute(true)//Bất đầu video không âm thanh
+            .Navigatable(true) //sẽ tương tác được với bàn phìm
+            .Media(m => m
+                .Title("Thực tập Media phím tắt")
+                .Source(new[] {
+                    new { quality = "360p", url = "https://www.youtube.com/watch?v=KGBRXxWG1sg" },
+                    new { quality = "480p", url = "https://www.youtube.com/watch?v=RO4T1jsnWDg" },
+                    new { quality = "720p", url = "https://www.youtube.com/watch?v=ivkkpPXlBfs" }
+                })
+            )
+            .Name("mediaPlayer")
+            .HtmlAttributes(new { style = "height:360px" })
+    )
+    </div>
+@*</div>*@
+<script>
+    $(document).ready(function () {
+        //focus the widget
+        $(document).on("keydown.examples", function (e) {
+            if (e.altKey && e.keyCode === 87 /* w */) {
+                $("#mediaPlayer").focus();
+            }
+        });
+    });
+</script>
+

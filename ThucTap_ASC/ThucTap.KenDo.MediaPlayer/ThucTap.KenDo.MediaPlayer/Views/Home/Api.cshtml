@@ -1,0 +1,131 @@
+﻿@using Kendo.Mvc.UI
+
+@{
+    ViewBag.Title = "Api";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="configurator">
+    <div class="header">Configurator</div>
+    <h4 style="display: flex; flex: 0 0 100%; padding: 16px 0 0 16px">API Functions</h4>
+    <div class="box-col">
+        <ul class="options" style="list-style:none;">
+            <li>
+                <button id="playButton">Play</button>
+            </li>
+            <li>
+                <button id="stopButton">Stop</button>
+            </li>
+            <li>
+                <button id="pauseButton">Pause</button>
+            </li>
+            <li>
+                <button id="fullScreenButton">Full-screen</button>
+            </li>
+        </ul>
+    </div>
+    <div class="box-col">
+        <ul class="options" style="list-style:none;">
+            <li>
+                <button id="toggleMuteButton">Toggle mute</button>
+            </li>
+            <li>
+                <button id="isEndedButton">Video has ended</button>
+            </li>
+            <li>
+                <button id="isPausedButton">Video is paused</button>
+            </li>
+            <li>
+                <button id="isPlayingButton">Video is playing</button>
+            </li>
+        </ul>
+    </div>
+    <div class="box-col">
+        <ul class="options" style="list-style:none;text-align:left">
+            <li>
+                <input id="volumeValue" value="50" style="float:none; width:90px;" />
+                <button id="volumeButton">Set volume</button>
+            </li>
+            <li>
+                <input id="seekValue" value="50" style="float:none; width:90px;" />
+                <button id="seekButton">Seek to</button>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="demo-section wide" style="min-width: 644px; ">
+    @(Html.Kendo().MediaPlayer()
+        .Name("MediaPlayer")
+        .AutoPlay(true)
+        .Media(m => m
+            .Title("Thực tập Media API")
+            .Source("https://www.youtube.com/watch?v=LWUnbC9Csw8")
+        )
+        .HtmlAttributes(new { style = "height:360px" })
+    )
+</div>
+<script>
+    $(document).ready( function () {
+        var mediaPlayer = $("#MediaPlayer").data("kendoMediaPlayer");
+
+        var setVolume = function () {
+            mediaPlayer.volume($("#volumeValue").val());
+        };
+
+        var seekTo = function () {
+            mediaPlayer.seek($("#seekValue").data("kendoNumericTextBox").value() * 1000);
+        };
+
+        $("#playButton").click(function () {
+            mediaPlayer.play();
+        });
+
+        $("#stopButton").click(function () {
+            mediaPlayer.stop();
+        });
+
+        $("#pauseButton").click(function () {
+            mediaPlayer.pause();
+        });
+
+        $("#fullScreenButton").click(function () {
+            mediaPlayer.fullScreen(true);
+        });
+        //Bật ât âm thanh nếu nó tat
+        $("#toggleMuteButton").click(function () {
+            mediaPlayer.mute(!mediaPlayer.mute());
+        });
+        //trả về boolen
+        $("#isEndedButton").click(function () {
+            alert(mediaPlayer.isEnded());
+        });
+        //trả về boolen
+        $("#isPausedButton").click(function () {
+            alert(mediaPlayer.isPaused());
+        });
+        //trả về boolen
+        $("#isPlayingButton").click(function () {
+            alert(mediaPlayer.isPlaying());
+        });
+
+        $("#volumeValue").kendoNumericTextBox({
+            change: setVolume,
+            min: 0,
+            max: 100,
+            format: "#",
+            decimals: 0
+        });
+
+        $("#seekValue").kendoNumericTextBox({
+            change: seekTo,
+            min: 0,
+            max: 97,
+            format: "#",
+            decimals: 0
+        });
+        //thay đổi tua video
+        $("#seekButton").click(seekTo);
+        //thay đổi volum
+        $("#volumeButton").click(setVolume);
+    });
+</script>
